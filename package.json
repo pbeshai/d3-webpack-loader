@@ -1,0 +1,25 @@
+{
+  "name": "d3-webpack-loader",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Beshai <peter.beshai@gmail.com> (https://github.com/pbeshai)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pbeshai/d3-webpack-loader.git"
+  },
+  "dependencies": {
+    "async": "^2.1.1",
+    "loader-utils": "^0.2.16",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^1.16.0"
+  }
+}
