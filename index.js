@@ -99,10 +99,11 @@ module.exports = function d3Loader() {
         reject(err);
       }
 
-      // combine results and filter out excluded modules
+      // combine results and filter out excluded modules and repeated
       allD3Modules = [].concat.apply([], results)
-        .filter(function (moduleDirectoryName) {
-          return modulesToExclude.indexOf(moduleDirectoryName) === -1;
+        .filter(function (moduleDirectoryName, i, arr) {
+          return modulesToExclude.indexOf(moduleDirectoryName) === -1 &&
+            arr.indexOf(moduleDirectoryName) === i;
         });
 
       resolve(allD3Modules);
@@ -110,9 +111,12 @@ module.exports = function d3Loader() {
   })
   // generate the code for bundling all the d3 modules together
   .then(function (moduleDirectoryNames) {
-    var output = '';
+    var output = '// d3-webpack-loader output:\n';
     var modules = [];
     var assign;
+
+    // add in UMD
+    output = "(function (global, factory) {\n typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :\n typeof define === 'function' && define.amd ? define(['exports'], factory) :\n (factory((global.d3 = global.d3 || {})));\n }(this, (function (exports) { 'use strict';";
 
     // add a line importing each of the d3 libraries
     moduleDirectoryNames.forEach(function (key) {
@@ -127,10 +131,11 @@ module.exports = function d3Loader() {
 
     // add in exports for each of the modules
     if (modules.length) {
-      output += 'module.exports = assign({},\n  ' + modules.join(',\n  ') + '\n);';
-    } else {
-      output += 'module.exports = {};';
+      output += 'assign(exports,\n  ' + modules.join(',\n  ') + '\n);';
     }
+
+    // close UMD
+    output += "Object.defineProperty(exports, '__esModule', { value: true });\n })));";
 
     return output;
   })

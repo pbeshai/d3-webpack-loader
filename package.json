@@ -15,7 +15,7 @@
     "test:install": "node tests/fixtures/installFixtures",
     "test": "mocha tests/*-test.js",
     "test:watch": "mocha --watch tests/*-test.js",
-    "prepublish": "npm run lint"
+    "preversion": "npm run lint"
   },
   "author": "Peter Beshai <peter.beshai@gmail.com> (https://github.com/pbeshai)",
   "license": "MIT",

@@ -14,6 +14,7 @@ var exampleDirs = fs.readdirSync(__dirname).filter(function (file) {
 
 // Ordering is important here. `npm install` must come first.
 var cmdArgs = [
+  { cmd: 'npm', args: ['uninstall', 'd3-webpack-loader'] },
   { cmd: 'npm', args: ['install'] }
 ];
 
