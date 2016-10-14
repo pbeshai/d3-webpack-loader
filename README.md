@@ -68,7 +68,7 @@ Doing it manually means you need to update your `d3-combined.js` file every time
 
 ### Server-side Rendering
 
-Sadly, this will not work if you are hoping to use server-side rendering, since node doesn't understand importing '`d3!'`. 
+Sadly, this will not work if you are hoping to use server-side rendering, since node doesn't understand importing `'d3!'` 
 
 
 ## Development
