@@ -66,6 +66,10 @@ d3.sum([1, 2, 3, 4]) // === 10
 
 Doing it manually means you need to update your `d3-combined.js` file every time you install a new D3 module. Instead, you can just use D3 Webpack Loader and `import d3 from 'd3!'` and have it work automatically.
 
+### Server-side Rendering
+
+Sadly, this will not work if you are hoping to use server-side rendering, since node doesn't understand importing '`d3!'`. 
+
 
 ## Development
 
