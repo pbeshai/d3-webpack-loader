@@ -67,6 +67,26 @@ d3.sum([1, 2, 3, 4]) // === 10
 Doing it manually means you need to update your `d3-combined.js` file every time you install a new D3 module. Instead, you can just use D3 Webpack Loader and `import d3 from 'd3!'` and have it work automatically.
 
 
+## Development
+
+Code is written in old school ES5. No fancy new JS features. I don't know why I did this and I regret it. At least it is pretty brief.
+
+### Testing
+
+To run tests, you first need to install the test fixtures. Do this by running `npm run test:install`. Then you can run tests:
+
+```
+npm run test
+```
+
+### Linting
+
+To lint files, run:
+
+```
+npm run lint
+```
+
 ## License
 
 MIT
