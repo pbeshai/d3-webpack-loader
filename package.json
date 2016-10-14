@@ -1,6 +1,6 @@
 {
   "name": "d3-webpack-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Automatically bundle D3 v4 modules under a single `d3` import with D3 Webpack Loader.",
   "keywords": [
     "d3",
