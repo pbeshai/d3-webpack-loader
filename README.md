@@ -3,6 +3,8 @@
 [![npm version](https://badge.fury.io/js/d3-webpack-loader.svg)](https://badge.fury.io/js/d3-webpack-loader)
 
 
+# Use at your own risk - I don't think this was a great idea after all.
+
 Automatically bundle D3 v4 modules under a single `d3` import with D3 Webpack Loader.
 
 If you are using a subset of the modules provided by the default D3 build or are supplementing the default D3 build with additional modules, consider using D3 Webpack Loader to combine them under a single namespace. This lets you continue using D3 in your code in the familiar `d3.___` format.
